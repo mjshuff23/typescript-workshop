@@ -1,5 +1,5 @@
 // You can explicitly describe this object’s shape using an interface declaration:
-interface User {
+export interface User {
   name: string,
   age: number,
 }
