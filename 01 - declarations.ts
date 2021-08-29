@@ -32,3 +32,12 @@ let myObject: Object = {
 // // No can do:
 // myObject.name = 12;
 console.log(myObject);
+
+
+// There are a few additions types that TypeScript offers:
+// `any` - Allow anything
+// `unknown` - Ensure someone using this type declares what the type is
+// `never` - It's not possible that this type can happen
+// `void` - A function which returns `undefined` or has no return value
+
+// You’ll see that there are two syntaxes for building types: Interfaces and Types. You should prefer `interface`. Use `type` when you need specific features.
