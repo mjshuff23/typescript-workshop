@@ -36,3 +36,53 @@ const newUser: User = {
 };
 
 console.log(validateUser(newUser));
+
+// The type definitions state that a user has to be passed in,
+// but there are enough escape valves in JavaScript whereby
+// you can't guarantee that.
+
+// Using a function which returns never allows you to add
+// additional code in places which should not be possible.
+// This is useful for presenting better error messages,
+// or closing resources like files or loops.
+
+// A very popular use for never, is to ensure that a
+// switch is exhaustive. E.g., that every path is covered.
+
+// Here's an enum and an exhaustive switch, try adding
+// a new option to the enum (maybe Tulip?)
+
+enum Flower {
+	Rose,
+	Rhododendron,
+	Violet,
+	Daisy,
+}
+
+const flowerLatinName = (flower: Flower) => {
+	switch (flower) {
+		case Flower.Rose:
+			return "Rosa rubiginosa";
+		case Flower.Rhododendron:
+			return "Rhododendron ferrugineum";
+		case Flower.Violet:
+			return "Viola reichenbachiana";
+		case Flower.Daisy:
+			return "Bellis perennis";
+
+		default:
+			const _exhaustiveCheck: never = flower;
+			return _exhaustiveCheck;
+	}
+};
+
+// Never in Unions
+
+// A never is something which is automatically removed from
+// a type union.
+
+type NeverIsRemoved = string | never | number;
+
+// If you look at the type for NeverIsRemoved, you see that
+// it is string | number. This is because it should never
+// happen at runtime because you cannot assign to it.
