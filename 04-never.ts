@@ -1,4 +1,4 @@
-import { User } from "./02 - interfaces";
+import { User } from "./02-interfaces";
 // Never
 
 // Because TypeScript supports code flow analysis, the language
