@@ -7,7 +7,7 @@ TypeScript offers a strict-type check as a superset of the JavaScript language. 
 - Installation:
   - `npm install -g typescript`
     - This installs TypeScript globally, but feel free to install it locally in your project or even using `npx`
-- Transpiling Code:
-  - `tsc <<filename.ts>>` - To transpile your TypeScript into JavaScript
-    - If you have a TypeScript error and attempt to transpile it, you will get a warning, but it will STILL transpile it.
+- Compiling Code:
+  - `tsc <<filename.ts>>` - To compile your TypeScript into JavaScript
+    - If you have a TypeScript error and attempt to compile it, you will get a warning, but it will STILL compile it.
     - `tsc --noEmitOnError <<filename.ts>>` - JavaScript file with not be updated if an error in TypeScript occurs
