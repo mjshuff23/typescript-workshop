@@ -18,12 +18,19 @@ let myUndefined: undefined = undefined;
 
 // Arrays must be given an extra parameter specifying the type inside of the array
 let myArrayOfNums: Array<number> = [ 1, 10, 20, 30 ];
+// The above line can also be done like this:
+let mySecondArrayOfNums: number[] = [ 5, 10, 15, 20 ];
+// String array
 let myArrayOfStrings: Array<string> = [ 'John', 'Doe' ];
+// Can also be done:
+let anotherArrayOfStrings: string[] = [ 'Mike', 'Shuff' ];
 
 // You can declare a variable of dynamic type in TypeScript with the `any` type
 let myDynamicVariable: any = 'Yo';
 myDynamicVariable = 12;
 let myDynamicArray: Array<any> = [ 'I', 'should', 12, 'probably', null, 'avoid', 'this' ];
+// Can also be done
+let anotherDynamicArray: any[] = [ 'Test', 12, true ];
 
 // Object declaration
 let myObject: Object = {

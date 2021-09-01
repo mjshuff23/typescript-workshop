@@ -1,6 +1,6 @@
 # TypeScript
 
-TypeScript offers a strict-type check as a superset of the JavaScript language. Limiting the use of dynamic variables can help reduce unexpected behaviors and increase forethought about how your code is expected to run.
+TypeScript offers a strict-type check as a superset of the JavaScript language. Limiting the use of dynamic variables can help reduce unexpected behaviors and bugs. Because if is a superset of JavaScript, JavaScript syntax is legal TypeScript.
 
 ## `tsc`, the TypeScript Compiler [Code Example](./compiling/hello.ts)
 
