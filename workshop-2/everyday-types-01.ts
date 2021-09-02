@@ -58,7 +58,7 @@ const names = [ "Mike", "Mark", "Allie" ];
 
   For example, here’s a function that takes a point-like object:
 */
-function printCoordinates(pt: { x: number, y: number; }): void {
+export function printCoordinates(pt: { x: number, y: number; }): void {
   console.log(`x: ${pt.x}, y: ${pt.y}`);
 }
 printCoordinates({ x: 12, y: 15 });
