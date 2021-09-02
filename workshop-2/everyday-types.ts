@@ -36,3 +36,67 @@ function getRandomNumber(): number {
   return Math.random() * 100;
   // return 'hi'
 }
+
+// Anonymous Functions
+// Anonymous functions are a little bit different from function declarations. When a function appears in a place where TypeScript can determine how it’s going to be called, the parameters of that function are automatically given types.
+
+const names = [ "Mike", "Mark", "Allie" ];
+
+// Contextual Typing
+// names.forEach(function (name) {
+//   console.log(name.toUppercase());
+// })
+
+// Contextual Typing also works for arrow functions
+// names.forEach((name) => {
+//   console.log(name.toUppercase());
+// })
+
+// Object Types
+/*
+  Apart from primitives, the most common sort of type you’ll encounter is an object type. This refers to any JavaScript value with properties, which is almost all of them! To define an object type, we simply list its properties and their types.
+
+  For example, here’s a function that takes a point-like object:
+*/
+function printCoordinates(pt: { x: number, y: number; }): void {
+  console.log(`x: ${pt.x}, y: ${pt.y}`);
+}
+printCoordinates({ x: 12, y: 15 });
+
+// // You can also separate properties with a semicolon(;)
+// function printCoordinates(pt: { x: number; y: number; }): void {
+//   console.log(`x: ${pt.x}, y: ${pt.y}`);
+// }
+
+// Optional Properties
+// Object types can also specify that some or all of their properties are optional. To do this, add a ? after the property name:
+function printName(obj: { first: string, last?: string; }): void {
+  // Note how you HAVE to check if the optional property was defined or not.
+  console.log(`${obj.last ? `${obj.first} ${obj.last}` : `${obj.first}`}`);
+}
+printName({ first: "Michael", last: "Shuff" });
+printName({ first: "Michael" });
+
+// Union Types
+// The first way to combine types you might see is a union type. A union type is a type formed from two or more other types, representing values that may be any one of those types. We refer to each of these types as the union’s members.
+function printID(id: string | number): void {
+  console.log(`Your ID: ${id}`);
+}
+printID(100);
+printID('100');
+
+// Using typeof with union types
+// You often need to use typeof to determine what course of action to follow when using union types
+function welcomePeople(x: string[] | string): void {
+  Array.isArray(x) ? console.log(`Hello, ${x.join(" and ")}`) :
+    console.log(`Welcome, ${x}`);
+}
+welcomePeople([ "John", "Mike", "Warren", "Cole" ]);
+welcomePeople("John and Joe");
+
+// Sometimes you’ll have a union where all the members have something in common. For example, both arrays and strings have a slice method. If every member in a union has a property in common, you can use that property without narrowing:
+function getFirstThree(x: number[] | string) {
+  return x.slice(0, 3);
+}
+console.log(getFirstThree([ 1, 5, 10, 20, 30 ]));
+console.log(getFirstThree('Joseph'));
