@@ -7,12 +7,16 @@ TypeScript offers a strict-type check as a superset of the JavaScript language. 
 - Installation:
   - `npm install -g typescript`
     - This installs TypeScript globally, but feel free to install it locally in your project or even using `npx`
+  - `tsc --init` to create a `tsconfig.json` file
+    - Any flag listed here can be configured in the `tsconfig.json`
 - Compiling Code:
   - `tsc <<filename.ts>>` - To compile your TypeScript into JavaScript
     - If you have a TypeScript error and attempt to compile it, you will get a warning, but it will STILL compile it.
     - `tsc --noEmitOnError <<filename.ts>>` - JavaScript file with not be updated if an error in TypeScript occurs
   - You may notice that `tsc` will downgrade (known as _downleveling_) your ES6 syntax (`let`, `const`, _template strings_) to ES3. without additional flags.
     - To keep ES6 syntax use the flag `tsc --target es2015 <<filename.ts>>`
+  - You can have the `tsc` compiler watch your directory, and any time a file is changed and saved, it will compile to JS:
+    - `"dev": "tsc --target es2019 (or any other) --watch --preserveWatchOutput"`
 
 ### Strictness
 

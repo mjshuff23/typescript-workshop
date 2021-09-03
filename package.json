@@ -1,0 +1,24 @@
+{
+	"name": "typescript-workshop",
+	"version": "1.0.0",
+	"description": "1. [Workshop 1](./workshop-1/README.md)",
+	"main": "index.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"dev": "tsc --target es2019 --watch --preserveWatchOutput"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mjshuff23/typescript-workshop.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/mjshuff23/typescript-workshop/issues"
+	},
+	"homepage": "https://github.com/mjshuff23/typescript-workshop#readme",
+	"devDependencies": {
+		"typescript": "^4.4.2"
+	}
+}

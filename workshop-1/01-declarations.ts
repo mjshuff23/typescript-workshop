@@ -7,6 +7,12 @@ let helloWorld = "Hello, world!";
 // // Can't do, because TypeScript knows this is a variable meant to hold strings
 // helloWorld = 12;
 
+// Sometimes we don't have initial values for our variables, so we need to use Type Annotations:
+let startTime = new Date();
+// let endTime;   // Hover over endTime
+// let endTime: Date;
+
+
 // However, you can be very explicit with types if you wish, although it is often unnecessary:
 // Syntax: `let/const/var variablename: type [= value]`
 let myFirstName: string;
@@ -33,9 +39,10 @@ let myDynamicArray: Array<any> = [ 'I', 'should', 12, 'probably', null, 'avoid',
 let anotherDynamicArray: any[] = [ 'Test', 12, true ];
 
 // Object declaration
-let myObject: Object = {
+let myObjectTwo: Object = {
   "name": "Yo"
 };
+
 // // No can do:
 // myObject.name = 12;
 console.log(myObject);
@@ -48,3 +55,9 @@ console.log(myObject);
 // `void` - A function which returns `undefined` or has no return value
 
 // You’ll see that there are two syntaxes for building types: Interfaces and Types. You should prefer `interface`. Use `type` when you need specific features.
+
+// Exporting
+export = {
+  myObject,
+  myAge
+};

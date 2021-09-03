@@ -32,6 +32,7 @@ sayHi('John');
 
 // It is not extremely necessary to specify the return type in an annotation, as it can usually be inferred by looking at what you return
 // function must return a number
+// Type Driven Development -  The idea of creating a function with an explicit return type and adding it to your code before implementing the actual functionality
 function getRandomNumber(): number {
   return Math.random() * 100;
   // return 'hi'

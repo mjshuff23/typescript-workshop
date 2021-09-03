@@ -6,7 +6,7 @@
 */
 
 // You can use semi-colons (;) or commas (,) to separate properties on an type
-type Point = {
+type PointType = {
   x: number,
   y: number;
 };
@@ -29,7 +29,7 @@ type ID = string | number;
 type TrimmedString = string;
 
 function trimInput(str: string): TrimmedString {
-  return str.trimLeft().trimRight();
+  return str.trimStart().trimEnd();
 }
 
 let userInput = trimInput("    Jonathan    ");
@@ -45,19 +45,19 @@ interface PointInterface {
 
 // Type aliases and interfaces are very similar, and in many cases you can choose between them freely. Almost all features of an interface are available in type, the key distinction is that a type cannot be re-opened to add new properties vs an interface which is always extendable.
 
-// // Interface Extension
-// interface Animal {
-//   name: string
-// }
+// Interface Extension
+interface Animal {
+  name: string;
+}
 
-// interface Bear extends Animal {
-//   honey: boolean,
-// }
+interface Bear extends Animal {
+  honey: boolean,
+}
 
-// let myBear: Bear = {
-//   honey: true,
-//   name: "Yogi"
-// }
+let myBear: Bear = {
+  honey: true,
+  name: "Yogi"
+};
 
 // // Type Extension
 // type Animal = {
@@ -75,18 +75,18 @@ interface PointInterface {
 
 // Adding new fields to type and interface
 // Interface
-// interface MyWindow {
-//   title: string;
-// }
+interface MyWindow {
+  title: string;
+}
 
-// interface MyWindow {
-//   size: { height: number, width: number; };
-// }
+interface MyWindow {
+  size: { height: number, width: number; };
+}
 
-// let myWindow: MyWindow = {
-//   title: "Mozilla Developer Network",
-//   size: { height: 100, width: 100 }
-// };
+let myWindow: MyWindow = {
+  title: "Mozilla Developer Network",
+  size: { height: 100, width: 100 }
+};
 
 // // Type
 // type MyWindow = {
