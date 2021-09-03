@@ -3,7 +3,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 // You can then declare that a JavaScript object conforms to the shape of your new interface by using syntax like : TypeName after a variable declaration:
 const myUser = {
     name: "Michael",
-    age: 33
+    age: 33,
+    // id: 1231501231
 };
 console.log(myUser);
 // // If you provide an object that doesn’t match the interface you have provided, TypeScript will warn you:

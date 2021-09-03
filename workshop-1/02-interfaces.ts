@@ -2,12 +2,15 @@
 export interface User {
   name: string,
   age: number,
+  // We can also have Optional Properties:
+  id?: number,
 }
 
 // You can then declare that a JavaScript object conforms to the shape of your new interface by using syntax like : TypeName after a variable declaration:
 const myUser: User = {
   name: "Michael",
-  age: 33
+  age: 33,
+  // id: 1231501231
 };
 console.log(myUser);
 

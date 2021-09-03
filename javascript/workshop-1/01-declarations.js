@@ -34,7 +34,7 @@ let myDynamicArray = ['I', 'should', 12, 'probably', null, 'avoid', 'this'];
 let anotherDynamicArray = ['Test', 12, true];
 // Object declaration
 let myObjectTwo = {
-    "name": "Yo"
+    "name": "Yo",
 };
 // // No can do:
 // myObject.name = 12;

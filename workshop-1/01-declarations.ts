@@ -40,7 +40,7 @@ let anotherDynamicArray: any[] = [ 'Test', 12, true ];
 
 // Object declaration
 let myObjectTwo: Object = {
-  "name": "Yo"
+  "name": "Yo",
 };
 
 // // No can do:
