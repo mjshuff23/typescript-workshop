@@ -18,7 +18,7 @@ const phonesIndex: {
     country: string,
     area: string,
     number: string,
-  };
+  } | undefined;
 } = { };
 
-phonesIndex.fax;
+console.log(phonesIndex.area.number);
