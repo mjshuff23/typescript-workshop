@@ -45,6 +45,7 @@ var Flower;
     Flower[Flower["Rhododendron"] = 1] = "Rhododendron";
     Flower[Flower["Violet"] = 2] = "Violet";
     Flower[Flower["Daisy"] = 3] = "Daisy";
+    Flower[Flower["Tulip"] = 4] = "Tulip";
 })(Flower || (Flower = {}));
 const flowerLatinName = (flower) => {
     switch (flower) {
@@ -56,6 +57,8 @@ const flowerLatinName = (flower) => {
             return "Viola reichenbachiana";
         case Flower.Daisy:
             return "Bellis perennis";
+        case Flower.Tulip:
+            return 'blah';
         default:
             const _exhaustiveCheck = flower;
             return _exhaustiveCheck;

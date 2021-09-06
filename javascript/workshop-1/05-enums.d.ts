@@ -10,10 +10,9 @@ declare enum UserResponse {
     Yes = 1
 }
 declare function respond(recipient: string, message: UserResponse): void;
-/********************************** String enums *********************************************/
 declare enum StringDirections {
-    Up = "UP",
-    Down = "DOWN",
-    Left = "LEFT",
-    Right = "RIGHT"
+    Up = "NORTH",
+    Down = "SOUTH",
+    Left = "WEST",
+    Right = "EAST"
 }

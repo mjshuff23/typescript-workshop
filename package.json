@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"dev": "tsc --target es2019 --watch --preserveWatchOutput"
+		"dev": "tsc --watch --preserveWatchOutput"
 	},
 	"repository": {
 		"type": "git",

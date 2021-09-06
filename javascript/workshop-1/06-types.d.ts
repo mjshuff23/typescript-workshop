@@ -3,6 +3,7 @@ declare type MyBoolean = true | false;
 declare type WindowStates = "open" | "closed" | "minimized";
 declare type LockStates = "locked" | "unlocked";
 declare type PositiveOddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
+declare type myCrazyType = "Hi" | false | 10;
 declare function getLength(obj: string | string[]): string;
 /**************************************** Generics ************************************************/
 declare type StringArray = Array<string>;
@@ -15,7 +16,5 @@ interface Backpack<Type> {
     add: (obj: Type) => void;
     get: () => Type;
 }
-declare const backpack: Backpack<string>;
-/*********************************** Explicit Types (cont'd) ************************************/
+declare let backpack: Backpack<string>;
 declare function greetUser(user: string, date: Date): void;
-/************************************* Erased Types ***********************************************/

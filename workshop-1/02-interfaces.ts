@@ -10,7 +10,7 @@ export interface User {
 const myUser: User = {
   name: "Michael",
   age: 33,
-  // id: 1231501231
+  id: 1231501231
 };
 console.log(myUser);
 
@@ -25,10 +25,12 @@ class UserAccount {
   // Notice the user of semicolons rather than commas
   name: string;
   age: number;
+  id?: number;
 
-  constructor(name: string, age: number) {
+  constructor(name: string, age: number, id?: number) {
     this.name = name;
     this.age = age;
+    this.id = id;
   }
 }
 const user: User = new UserAccount("Michael", 33);
@@ -40,6 +42,14 @@ function getAdminUser(): User {
   return user;
 }
 console.log(getAdminUser());
+
+function add(a: number, b: number): number {
+  return a + b;
+}
+
+function sayHello(): void {
+  console.log('Hello');
+}
 
 // This function MUST take in a user
 function deleteUser(user: User) {

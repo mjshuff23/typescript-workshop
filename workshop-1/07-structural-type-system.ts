@@ -13,7 +13,7 @@ function logPoint(point: Point) {
   console.log(`${point.x}, ${point.y}`);
 }
 
-const point = { x: 12, y: 26 };
+const point = { x: 12, y: 26, z: 100 };
 logPoint(point);
 
 // The point variable is never declared to be a Point type. However, TypeScript compares the shape of point to the shape of Point in the type-check. They have the same shape, so the code passes.

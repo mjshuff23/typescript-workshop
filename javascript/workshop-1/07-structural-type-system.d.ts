@@ -6,6 +6,7 @@ declare function logPoint(point: Point): void;
 declare const point: {
     x: number;
     y: number;
+    z: number;
 };
 declare const point3: {
     x: number;

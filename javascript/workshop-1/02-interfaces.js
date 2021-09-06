@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const myUser = {
     name: "Michael",
     age: 33,
-    // id: 1231501231
+    id: 1231501231
 };
 console.log(myUser);
 // // If you provide an object that doesn’t match the interface you have provided, TypeScript will warn you:
@@ -14,9 +14,10 @@ console.log(myUser);
 // };
 // Since JavaScript supports classes and object-oriented programming, so does TypeScript. You can use an interface declaration with classes:
 class UserAccount {
-    constructor(name, age) {
+    constructor(name, age, id) {
         this.name = name;
         this.age = age;
+        this.id = id;
     }
 }
 const user = new UserAccount("Michael", 33);
@@ -27,6 +28,12 @@ function getAdminUser() {
     return user;
 }
 console.log(getAdminUser());
+function add(a, b) {
+    return a + b;
+}
+function sayHello() {
+    console.log('Hello');
+}
 // This function MUST take in a user
 function deleteUser(user) {
     console.log(user, 'deleted');

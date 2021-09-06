@@ -31,6 +31,27 @@ let myArrayOfStrings: Array<string> = [ 'John', 'Doe' ];
 // Can also be done:
 let anotherArrayOfStrings: string[] = [ 'Mike', 'Shuff' ];
 
+// Arrays
+let myNums: number[] = [ 1, 6, 20 ];
+let myWords: string[] = [ 'my', 'words' ];
+let myChecks: boolean[] = [ true, false, false, false, true ];
+let myObjs: object[] = [ new Date(), new Date(), new Date(), new Date(), new Date(), new Date(), ];
+let myNulls: null[] = [ null, null ];
+let myUndefineds: undefined[] = [ undefined, undefined, undefined ];
+let myArrayOfArrays: number[][] = [ [ 1, 4, 10 ], [ 10, 10, 30 ], [ 30 ] ];
+let myAnyArray: any[] = [ 'test', 12, true, 'me', null, 'out' ];
+
+// Arrays (alternative)
+let myAltNums: Array<number> = [ 1, 5, 10 ];
+let myAltWords: Array<string> = [ 'test', 'me', 'out' ];
+let myAltChecks: Array<boolean> = [ true, true, false ];
+let myAltObjects: Array<object> = [ new Date(), new Date() ];
+let myAltNulls: Array<null> = [ null, null, null ];
+let myAltUndefined: Array<undefined> = [ undefined, undefined, undefined ];
+let myAltAny: Array<any> = [ 'test', 12, true, null, undefined, 'me', [ '1', '3' ] ];
+let myAltArrayOfArrays: Array<Array<number>> = [ [ 1, 2, 3, ], [ 4, 5, 6 ] ];
+
+
 // You can declare a variable of dynamic type in TypeScript with the `any` type
 let myDynamicVariable: any = 'Yo';
 myDynamicVariable = 12;
@@ -41,6 +62,8 @@ let anotherDynamicArray: any[] = [ 'Test', 12, true ];
 // Object declaration
 let myObjectTwo: Object = {
   "name": "Yo",
+  "age": 33,
+  "isAdult": true
 };
 
 // // No can do:

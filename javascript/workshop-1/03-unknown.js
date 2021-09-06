@@ -18,7 +18,7 @@ console.log(myAccount); // { name: 'Dorothea' }
 // to fix this with Generics - but it's also possible to fix
 // this with unknown.
 const jsonParserUnknown = (jsonString) => JSON.parse(jsonString);
-const myUserAccount = jsonParserUnknown(`{ "name": "Samuel" }`);
+const myUserAccount = jsonParserUnknown(`{ "name": "Samuel", "age": "12" }`);
 console.log(myUserAccount.name);
 // Unknown is a great tool, to understand it more read these:
 // https://mariusschulz.com/blog/the-unknown-type-in-typescript

@@ -26,6 +26,24 @@ let mySecondArrayOfNums = [5, 10, 15, 20];
 let myArrayOfStrings = ['John', 'Doe'];
 // Can also be done:
 let anotherArrayOfStrings = ['Mike', 'Shuff'];
+// Arrays
+let myNums = [1, 6, 20];
+let myWords = ['my', 'words'];
+let myChecks = [true, false, false, false, true];
+let myObjs = [new Date(), new Date(), new Date(), new Date(), new Date(), new Date(),];
+let myNulls = [null, null];
+let myUndefineds = [undefined, undefined, undefined];
+let myArrayOfArrays = [[1, 4, 10], [10, 10, 30], [30]];
+let myAnyArray = ['test', 12, true, 'me', null, 'out'];
+// Arrays (alternative)
+let myAltNums = [1, 5, 10];
+let myAltWords = ['test', 'me', 'out'];
+let myAltChecks = [true, true, false];
+let myAltObjects = [new Date(), new Date()];
+let myAltNulls = [null, null, null];
+let myAltUndefined = [undefined, undefined, undefined];
+let myAltAny = ['test', 12, true, null, undefined, 'me', ['1', '3']];
+let myAltArrayOfArrays = [[1, 2, 3,], [4, 5, 6]];
 // You can declare a variable of dynamic type in TypeScript with the `any` type
 let myDynamicVariable = 'Yo';
 myDynamicVariable = 12;
@@ -35,6 +53,8 @@ let anotherDynamicArray = ['Test', 12, true];
 // Object declaration
 let myObjectTwo = {
     "name": "Yo",
+    "age": 33,
+    "isAdult": true
 };
 // // No can do:
 // myObject.name = 12;

@@ -33,8 +33,10 @@ const jsonParserUnknown = (jsonString: string): unknown => JSON.parse(jsonString
 // that API consumers think about their typing up-front:
 
 
-type UnknownUser = { name: string; };
-const myUserAccount = jsonParserUnknown(`{ "name": "Samuel" }`) as UnknownUser;
+type UnknownUser = {
+  name: string;
+};
+const myUserAccount = jsonParserUnknown(`{ "name": "Samuel", "age": "12" }`) as UnknownUser;
 console.log(myUserAccount.name);
 
 // Unknown is a great tool, to understand it more read these:

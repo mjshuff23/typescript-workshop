@@ -7,6 +7,7 @@ TypeScript offers a strict-type check as a superset of the JavaScript language. 
 - Installation:
   - `npm install -g typescript`
     - This installs TypeScript globally, but feel free to install it locally in your project or even using `npx`
+    - "Sudo"
   - `tsc --init` to create a `tsconfig.json` file
     - Any flag listed here can be configured in the `tsconfig.json`
 - Compiling Code:
