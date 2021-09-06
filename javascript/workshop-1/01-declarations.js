@@ -26,7 +26,12 @@ let mySecondArrayOfNums = [5, 10, 15, 20];
 let myArrayOfStrings = ['John', 'Doe'];
 // Can also be done:
 let anotherArrayOfStrings = ['Mike', 'Shuff'];
+let myUser = {
+    name: "Mike",
+    age: 33
+};
 // Arrays
+let myUsers = [myUser, myUser];
 let myNums = [1, 6, 20];
 let myWords = ['my', 'words'];
 let myChecks = [true, false, false, false, true];
@@ -36,6 +41,7 @@ let myUndefineds = [undefined, undefined, undefined];
 let myArrayOfArrays = [[1, 4, 10], [10, 10, 30], [30]];
 let myAnyArray = ['test', 12, true, 'me', null, 'out'];
 // Arrays (alternative)
+let myAltUsers = [myUser, myUser];
 let myAltNums = [1, 5, 10];
 let myAltWords = ['test', 'me', 'out'];
 let myAltChecks = [true, true, false];

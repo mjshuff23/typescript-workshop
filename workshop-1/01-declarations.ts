@@ -31,7 +31,18 @@ let myArrayOfStrings: Array<string> = [ 'John', 'Doe' ];
 // Can also be done:
 let anotherArrayOfStrings: string[] = [ 'Mike', 'Shuff' ];
 
+interface MyUserObject {
+  name: string,
+  age: number;
+}
+
+let myUser: MyUserObject = {
+  name: "Mike",
+  age: 33
+};
+
 // Arrays
+let myUsers: MyUserObject[] = [ myUser, myUser ];
 let myNums: number[] = [ 1, 6, 20 ];
 let myWords: string[] = [ 'my', 'words' ];
 let myChecks: boolean[] = [ true, false, false, false, true ];
@@ -42,6 +53,7 @@ let myArrayOfArrays: number[][] = [ [ 1, 4, 10 ], [ 10, 10, 30 ], [ 30 ] ];
 let myAnyArray: any[] = [ 'test', 12, true, 'me', null, 'out' ];
 
 // Arrays (alternative)
+let myAltUsers: Array<MyUserObject> = [ myUser, myUser ];
 let myAltNums: Array<number> = [ 1, 5, 10 ];
 let myAltWords: Array<string> = [ 'test', 'me', 'out' ];
 let myAltChecks: Array<boolean> = [ true, true, false ];

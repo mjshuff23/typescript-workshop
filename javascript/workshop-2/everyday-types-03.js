@@ -77,3 +77,21 @@ configure();
 // const req = { url: "https://www.google.com", method: "GET"} as const;
 // handleRequest(req.url, req.method)
 // The as const suffix acts like const but for the type system, ensuring that all properties are assigned the literal type instead of a more general version like string or number.
+// Tuples - A multi-element, ordered, data structure, where the position of each item has special meaning or convention
+//          [Year,     Make,     Model]
+// let myCar = [ 2002, "Toyota", "Corolla" ];
+// How TypeScript handles inference: let myCar: (string | number)[]
+// Be more explicit when creating a tuple
+let myCar = [
+    2002,
+    'Toyota',
+    'Corolla'
+];
+// destructured assignment is convenient here:
+const [year, make, model] = myCar;
+// How TypeScript handles inference: const model: string | number
+// Limited Support for enforcing tuple length constraints
+// const numPair: [number, number] = [4, 5, 6]
+const numPair = [4, 5];
+numPair.push(30);
+console.log(numPair);

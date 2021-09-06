@@ -8,3 +8,6 @@ interface Options {
     width: number;
 }
 declare function configure(x?: Options | "auto"): void;
+declare let myCar: [number, string, string];
+declare const year: number, make: string, model: string;
+declare const numPair: [number, number];
