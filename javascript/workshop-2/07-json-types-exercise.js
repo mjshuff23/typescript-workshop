@@ -23,15 +23,14 @@ isJSON(false);
 isJSON(true);
 isJSON(null);
 isJSON({ a: { b: [2, 3, 'foo'] } });
-// NEGATIVE test cases (must fail)
-// @ts-expect-error
-isJSON(() => '');
-// @ts-expect-error
-isJSON(class {
-});
-// @ts-expect-error
-isJSON(undefined);
-// @ts-expect-error
-isJSON(new BigInt(143));
-// @ts-expect-error
-isJSON(isJSON);
+// // NEGATIVE test cases (must fail)
+// // @ts-expect-error
+// isJSON(() => '');
+// // @ts-expect-error
+// isJSON(class {});
+// // @ts-expect-error
+// isJSON(undefined);
+// // @ts-expect-error
+// isJSON(new BigInt(143));
+// // @ts-expect-error
+// isJSON(isJSON);
