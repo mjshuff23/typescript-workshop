@@ -8,14 +8,11 @@ function flipCoin(): 'heads' | 'tails' {
   return 'tails';
 }
 
-const myFunc = () => {};
-
 /* Narrowing With Type Guards
     - When we need to separate the potential possibilities of a Union, we often need to do type guards
     - Type guards are expressions, which when used with control flow statements, allow us to have a more specific type for a particular value
     - Often times we will use `typeof` and `instanceof` for narrowing with type guards.
 */
-
 function maybeGetUserInfo(
   // ?: - optional parameter
   string?: 'error' | 'success'
@@ -32,3 +29,56 @@ function maybeGetUserInfo(
 console.log(maybeGetUserInfo('success'));
 // console.log(maybeGetUserInfo('error'));
 console.log(maybeGetUserInfo());
+
+class Person {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+}
+
+const person1 = new Person('Mike', 33);
+
+function returnPerson(person: Person | { name: string; age: number }): Person {
+  if (person instanceof Person) return person;
+
+  console.log('Not an existing person, creating...');
+  const newPerson = new Person(person.name, person.age);
+  return newPerson;
+}
+
+console.log(returnPerson(person1));
+console.log(returnPerson({ name: 'John', age: 50 }));
+
+function maybeGetInfoTwo():
+  | ['error', Error]
+  | ['success', { name: string; email: string }] {
+  if (Math.random() > 0.5) {
+    return ['error', new Error()];
+  }
+  return ['success', { name: 'John', email: 'john@email.com' }];
+}
+
+const outcome = maybeGetInfoTwo();
+const [first, second] = outcome;
+
+if (second instanceof Error) {
+  second;
+} else {
+  second;
+}
+
+// Discriminated Unions ("tagged" union type)
+// Using a specific 'key' to know what's available while having many different options (here we only have two, but you could have more)
+// Can also be done with an Object
+
+const secondOutcome = maybeGetInfoTwo();
+if (secondOutcome[0] === 'error') {
+  // In this branch of code, second is an Error
+  secondOutcome;
+} else {
+  secondOutcome;
+}
