@@ -13,7 +13,6 @@
       - true
       - null
 */
-Object.defineProperty(exports, "__esModule", { value: true });
 ///// DO NOT EDIT ANY CODE BELOW THIS LINE /////
 function isJSON(arg) { }
 // POSITIVE test cases (must pass)
