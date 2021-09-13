@@ -19,37 +19,37 @@
 // TypeScript only allows type assertions which convert to a more specific or less specific version of a type. This rule prevents “impossible” coercions like:
 // const x = "hello" as number;
 // Sometimes this rule can be too conservative and will disallow more complex coercions that might be valid. If this happens, you can use two assertions, first to any (or unknown, which we’ll introduce later), then to the desired type:
-const a = "hello";
+const a = 'hello';
 // Literal Types
 /*
   In addition to the general types string and number, we can refer to specific strings and numbers in type positions.
 
   One way to think about this is to consider how JavaScript comes with different ways to declare a variable. Both var and let allow for changing what is held inside the variable, and const does not. This is reflected in how TypeScript creates types for literals.
 */
-let changingString = "Hello World!";
-changingString = "Pikachu";
-const constantString = "I will never change";
+let changingString = 'Hello World!';
+changingString = 'Pikachu';
+const constantString = 'I will never change';
 // By themselves, literal types aren’t very valuable:
-let x = "Hello";
-x = "Hello";
+let x = 'Hello';
+x = 'Hello';
 // x = "hello"
 // But by combining literals into unions, you can express a much more useful concept - for example, functions that only accept a certain set of known values:
 function printText(s, alignment) {
     // ...
 }
-printText("Hey friends!", "left");
+printText('Hey friends!', 'left');
 // printText("Hey friends!", "centre")
 function compare(a, b) {
     return a === b ? 0 : a > b ? 1 : -1;
 }
-console.log(compare("john", "john"));
-console.log(compare("john", "mike"));
-console.log(compare("mike", "john"));
-function configure(x = "auto") {
+console.log(compare('john', 'john'));
+console.log(compare('john', 'mike'));
+console.log(compare('mike', 'john'));
+function configure(x = 'auto') {
     // ...
 }
 configure({ width: 100 });
-configure("auto");
+configure('auto');
 // We can still use '=' to set default options
 configure();
 // Literal Interface
@@ -57,21 +57,22 @@ configure();
 // const object = { counter: 0 };
 // if (object.counter === 0) object.counter++;
 // const req = { url: "https://www.google.com", method: "GET" };
-// function handleRequest(url: string, method: "GET" | "POST") {
-//   console.log(url);
-//   console.log(method);
-// }
+function handleRequest(url, method) {
+    console.log(url);
+    console.log(method);
+}
 // handleRequest(req.url, req.method);
 /*
   In the above example req.method is inferred to be string, not "GET". Because code can be evaluated between the creation of req and the call of handleRequest which could assign a new string like "GUESS" to req.method, TypeScript considers this code to have an error.
 
   There are two ways to work around this.
 */
-// // 1. You can change the inference by adding a type assertion in either location:
-// // Change 1
+// 1. You can change the inference by adding a type assertion in either location:
+// Change 1
 // const req = { url: "https://www.google.com", method: "GET" as "GET"}
-// // Change 2
-// handleRequest(req.url, req.method as "GET")
+// const req = { url: "https://www.google.com", method: "POST" as "POST"}
+// Change 2
+// handleRequest(req.url, req.method as "GET" | "POST")
 // // Change 1 means “I intend for req.method to always have the literal type "GET"”, preventing the possible assignment of "GUESS" to that field after. Change 2 means “I know for other reasons that req.method has the value "GET"“.
 // // 2. You can use `as const` to convert the entire object to be type literals:
 // const req = { url: "https://www.google.com", method: "GET"} as const;
@@ -82,11 +83,7 @@ configure();
 // let myCar = [ 2002, "Toyota", "Corolla" ];
 // How TypeScript handles inference: let myCar: (string | number)[]
 // Be more explicit when creating a tuple
-let myCar = [
-    2002,
-    'Toyota',
-    'Corolla'
-];
+let myCar = [2002, 'Toyota', 'Corolla'];
 // destructured assignment is convenient here:
 const [year, make, model] = myCar;
 // How TypeScript handles inference: const model: string | number
