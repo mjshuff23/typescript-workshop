@@ -2,9 +2,9 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 // You can then declare that a JavaScript object conforms to the shape of your new interface by using syntax like : TypeName after a variable declaration:
 const myUser = {
-    name: "Michael",
+    name: 'Michael',
     age: 33,
-    id: 1231501231
+    id: 1231501231,
 };
 console.log(myUser);
 // // If you provide an object that doesn’t match the interface you have provided, TypeScript will warn you:
@@ -20,7 +20,7 @@ class UserAccount {
         this.id = id;
     }
 }
-const user = new UserAccount("Michael", 33);
+const user = new UserAccount('Michael', 33);
 console.log(user);
 // You can use interfaces to annotate parameters and return values to functions:
 // This function MUST return a user

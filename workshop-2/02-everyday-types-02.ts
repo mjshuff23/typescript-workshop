@@ -6,14 +6,15 @@
 */
 
 // You can use semi-colons (;) or commas (,) to separate properties on an type
+// It is convention to use TitleCase for alias names and interface names
 type PointType = {
-  x: number,
+  x: number;
   y: number;
 };
 
 let myPoint: Point = {
   x: 150,
-  y: 200
+  y: 200,
 };
 
 function myCoords(pt: Point): void {
@@ -32,9 +33,9 @@ function trimInput(str: string): TrimmedString {
   return str.trimStart().trimEnd();
 }
 
-let userInput = trimInput("    Jonathan    ");
+let userInput = trimInput('    Jonathan    ');
 console.log(userInput);
-userInput = "January";
+userInput = 'January';
 
 // Interfaces
 // An interface declaration is another way to name an object type:
@@ -51,12 +52,12 @@ interface Animal {
 }
 
 interface Bear extends Animal {
-  honey: boolean,
+  honey: boolean;
 }
 
 let myBear: Bear = {
   honey: true,
-  name: "Yogi"
+  name: 'Yogi',
 };
 
 // // Type Extension
@@ -80,12 +81,12 @@ interface MyWindow {
 }
 
 interface MyWindow {
-  size: { height: number, width: number; };
+  size: { height: number; width: number };
 }
 
 let myWindow: MyWindow = {
-  title: "Mozilla Developer Network",
-  size: { height: 100, width: 100 }
+  title: 'Mozilla Developer Network',
+  size: { height: 100, width: 100 },
 };
 
 // // Type

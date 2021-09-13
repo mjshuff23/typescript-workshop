@@ -102,7 +102,16 @@ function makeWeek(): Date & { end: Date } {
 // Here we get everything from our start Date with the addition of an end Date
 const thisWeek = makeWeek();
 
-thisWeek.toISOString();
+// thisWeek.toISOString();
 thisWeek.end.toISOString();
 
 // Union Types are FAR more common than Intersection Types, but you will see them
+
+type SpecialDate = Date & { getReason(): string };
+
+const newYearsEve: SpecialDate = {
+  ...new Date(),
+  getReason: () => 'Last day of the year!',
+};
+
+console.log(newYearsEve.getReason());

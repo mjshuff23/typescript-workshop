@@ -1,16 +1,16 @@
 // You can explicitly describe this object’s shape using an interface declaration:
 export interface User {
-  name: string,
-  age: number,
+  name: string;
+  age: number;
   // We can also have Optional Properties:
-  id?: number,
+  id?: number;
 }
 
 // You can then declare that a JavaScript object conforms to the shape of your new interface by using syntax like : TypeName after a variable declaration:
 const myUser: User = {
-  name: "Michael",
+  name: 'Michael',
   age: 33,
-  id: 1231501231
+  id: 1231501231,
 };
 console.log(myUser);
 
@@ -33,7 +33,7 @@ class UserAccount {
     this.id = id;
   }
 }
-const user: User = new UserAccount("Michael", 33);
+const user: User = new UserAccount('Michael', 33);
 console.log(user);
 
 // You can use interfaces to annotate parameters and return values to functions:
