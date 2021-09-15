@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.getData = void 0;
 const add = (a, b) => a + b;
-const substract = (x, y) => x - y;
+const subtract = (x, y) => x - y;
 // Let’s pause for a minute to note:
 //   - The return type for an interface is :number, and for the type alias it’s => number
 //   - Because we provide types for the functions add and subtract, we don’t need to provide type annotations

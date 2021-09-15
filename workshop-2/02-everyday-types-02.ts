@@ -12,6 +12,11 @@ type PointType = {
   y: number;
 };
 
+// interface PointType {
+//   x: number;
+//   y: number;
+// }
+
 let myPoint: PointType = {
   x: 150,
   y: 200,
@@ -62,7 +67,7 @@ interface PointInterface {
 //   name: 'Yogi',
 // };
 
-// // Type Extension
+// Type Extension
 // type Animal = {
 //   name: string;
 // };
@@ -108,3 +113,11 @@ interface PointInterface {
 //   size: { height: number, width: number}
 // }
 // // Error: Duplicate identifier 'Window'.
+
+interface Window {
+  myProperty: string;
+}
+
+interface Document {
+  myNumbers: number[];
+}

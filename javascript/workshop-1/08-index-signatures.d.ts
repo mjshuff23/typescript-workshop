@@ -14,11 +14,16 @@ declare const phones: {
         area: string;
         number: string;
     };
+    fax: {
+        country: string;
+        area: string;
+        number: string;
+    };
 };
 declare const phonesIndex: {
     [k: string]: {
         country: string;
         area: string;
         number: string;
-    } | undefined;
+    };
 };

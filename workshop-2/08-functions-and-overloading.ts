@@ -51,7 +51,7 @@ interface DateConstructor {
 
 let myDateConstructor: DateConstructor = Date;
 
-const d = new myDateConstructor(1235321);
+const d = new myDateConstructor(3241212);
 
 /* Function Overloads
 
@@ -71,8 +71,8 @@ const d = new myDateConstructor(1235321);
     - Let’s give it a shot:
 */
 
-type FormSubmitHandler = (data: FormData) => void;
-type MessageHandler = (event: MessageEvent) => void;
+// type FormSubmitHandler = (data: FormData) => void;
+// type MessageHandler = (event: MessageEvent) => void;
 
 // function handleMainEvent(
 //   ele: HTMLFormElement | HTMLIFrameElement,
@@ -92,30 +92,30 @@ type MessageHandler = (event: MessageEvent) => void;
 */
 
 // Head 1 of function
-function handleMainEvent(
-  elem: HTMLFormElement,
-  handler: FormSubmitHandler
-): void;
+// function handleMainEvent(
+//   elem: HTMLFormElement,
+//   handler: FormSubmitHandler
+// ): void;
 
-// Head 2 of function
-function handleMainEvent(
-  elem: HTMLIFrameElement,
-  handler: MessageHandler
-): void;
+// // Head 2 of function
+// function handleMainEvent(
+//   elem: HTMLIFrameElement,
+//   handler: MessageHandler
+// ): void;
 
-// Function body
-function handleMainEvent(
-  elem: HTMLFormElement | HTMLIFrameElement,
-  handler: FormSubmitHandler | MessageHandler
-) {
-  //...
-}
+// // Function body
+// function handleMainEvent(
+//   elem: HTMLFormElement | HTMLIFrameElement,
+//   handler: FormSubmitHandler | MessageHandler
+// ) {
+//   //...
+// }
 
-const myFrame = document.getElementsByTagName('iframe')[0];
-const myForm = document.getElementsByTagName('form')[0];
+// const myFrame = document.getElementsByTagName('iframe')[0];
+// const myForm = document.getElementsByTagName('form')[0];
 
-handleMainEvent(myFrame, (val) => {});
-handleMainEvent(myForm, (val) => {});
+// handleMainEvent(myFrame, (val) => {});
+// handleMainEvent(myForm, (val) => {});
 
 // handleMainEvent()
 // ^^ Hover for Tooltip ^^

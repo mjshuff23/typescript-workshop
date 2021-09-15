@@ -17,3 +17,9 @@ interface PointInterface {
     x: number;
     y: number;
 }
+interface Window {
+    myProperty: string;
+}
+interface Document {
+    myNumbers: number[];
+}

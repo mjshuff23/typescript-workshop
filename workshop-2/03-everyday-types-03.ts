@@ -7,7 +7,6 @@
   In this situation, you can use a type assertion to specify a more specific type:
 */
 const myCanvas = document.getElementById('main-canvas') as HTMLCanvasElement;
-
 /*
   Like a type annotation, type assertions are removed by the compiler and won’t affect the runtime behavior of your code.
 

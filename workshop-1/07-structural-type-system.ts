@@ -5,8 +5,8 @@
 */
 
 interface Point {
-  x: number,
-  y: number,
+  x: number;
+  y: number;
 }
 
 function logPoint(point: Point) {
