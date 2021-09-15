@@ -74,7 +74,6 @@ if (second instanceof Error) {
 // Discriminated Unions ("tagged" union type)
 // Using a specific 'key' to know what's available while having many different options (here we only have two, but you could have more)
 // Can also be done with an Object
-
 const secondOutcome = maybeGetInfoTwo();
 if (secondOutcome[0] === 'error') {
   // In this branch of code, second is an Error
@@ -93,7 +92,7 @@ function makeWeek(): Date & { end: Date } {
 
   const start = new Date();
   const end = new Date(start.valueOf() + 20000);
-
+  console.log(start);
   return { ...start, end }; // kind of Object.assign.
   // return start;
   // return end;
@@ -101,7 +100,7 @@ function makeWeek(): Date & { end: Date } {
 
 // Here we get everything from our start Date with the addition of an end Date
 const thisWeek = makeWeek();
-
+console.log(thisWeek);
 // thisWeek.toISOString();
 thisWeek.end.toISOString();
 

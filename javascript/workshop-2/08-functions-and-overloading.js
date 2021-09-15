@@ -29,7 +29,7 @@ const values = [];
 // invokeInFourSeconds(() => values.push(4));
 invokeInFiveSeconds(() => values.push(5));
 let myDateConstructor = Date;
-const d = new myDateConstructor();
+const d = new myDateConstructor(1235321);
 // Function body
 function handleMainEvent(elem, handler) {
     //...
@@ -78,18 +78,32 @@ const boundHandler = myClickHandler.bind(myButton);
 boundHandler(new Event('click'));
 myClickHandler.call(myButton, new Event('click'));
 /* Function Type Best Practices
-    TypeScript is capable of inferring function return types quite effectively, but this accommodating behavior can lead to unintentional ripple effects where types change throughout your codebase
-*/
+    TypeScript is capable of inferring function return types quite effectively, but this accommodating behavior can lead to unintentional ripple effects where types change throughout your codebase                     */
 // Consider this example
 async function getData(url) {
     const response = await fetch(url);
-    if (response.ok) {
-        const data = (await response.json());
-        return data;
-    }
+    // if (response.ok) {
+    const data = (await response.json());
+    return data;
+    // }
 }
 exports.getData = getData;
 async function loadData() {
     const myData = await getData('https://example.com');
     console.log(myData.properties.join(', '));
+}
+/* We’ll see some type-checking errors pop up, but at the invocation site, not the declaration site.
+    Imagine if we were passing this value through several other functions before reaching the point where type checking alerted us to a problem! */
+// If we use the same example, but define a return type explicitly, the error message is surfaced at the declaration site
+async function getDataTwo(url) {
+    const resp = await fetch(url);
+    // if (resp.ok) {
+    const data = (await resp.json());
+    return data;
+    // }
+}
+function loadDataTwo() {
+    getDataTwo('https://example.com').then((result) => {
+        console.log(result.properties.join(', '));
+    });
 }

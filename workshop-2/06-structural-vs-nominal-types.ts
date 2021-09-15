@@ -32,6 +32,8 @@
 // // Is `myCar` type-equivalent to what checkCar wants as an argument?
 // CarChecker.checkCar(myCar)
 
+// https://medium.com/@thejameskyle/type-systems-structural-vs-nominal-typing-explained-56511dd969f4
+
 // Structural Type Systems are all about STRUCTURE and SHAPE.  Here's a TypeScript example
 class Car {
   make: string;
@@ -53,7 +55,12 @@ class Truck {
   year: number;
   towingCapacity: number;
 
-  constructor(make: string, model: string, year: number, towingCapacity: number) {
+  constructor(
+    make: string,
+    model: string,
+    year: number,
+    towingCapacity: number
+  ) {
     this.make = make;
     this.model = model;
     this.year = year;
@@ -64,14 +71,10 @@ class Truck {
 const vehicle = {
   make: 'Honda',
   model: 'Accord',
-  year: 2017
+  year: 2017,
 };
 
-function printCar(car: {
-  make: string;
-  model: string;
-  year: number;
-}) {
+function printCar(car: { make: string; model: string; year: number }) {
   console.log(`${car.make}, ${car.model}, ${car.year}`);
 }
 

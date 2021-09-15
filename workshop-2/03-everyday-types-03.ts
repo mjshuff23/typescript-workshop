@@ -6,7 +6,7 @@
 
   In this situation, you can use a type assertion to specify a more specific type:
 */
-// const myCanvas = document.getElementById("main-canvas") as HTMLCanvasElement;
+const myCanvas = document.getElementById('main-canvas') as HTMLCanvasElement;
 
 /*
   Like a type annotation, type assertions are removed by the compiler and won’t affect the runtime behavior of your code.
@@ -56,11 +56,12 @@ console.log(compare('mike', 'john'));
 // Of course, you can combine these with non-literal types:
 interface Options {
   width: number;
+  height: number;
 }
 function configure(x: Options | 'auto' = 'auto') {
   // ...
 }
-configure({ width: 100 });
+configure({ width: 100, height: 45343 });
 configure('auto');
 // We can still use '=' to set default options
 configure();
@@ -76,7 +77,6 @@ function handleRequest(url: string, method: 'GET' | 'POST') {
   console.log(url);
   console.log(method);
 }
-// handleRequest(req.url, req.method);
 
 /*
   In the above example req.method is inferred to be string, not "GET". Because code can be evaluated between the creation of req and the call of handleRequest which could assign a new string like "GUESS" to req.method, TypeScript considers this code to have an error.
@@ -86,20 +86,21 @@ function handleRequest(url: string, method: 'GET' | 'POST') {
 // 1. You can change the inference by adding a type assertion in either location:
 // Change 1
 // const req = { url: "https://www.google.com", method: "GET" as "GET"}
-// const req = { url: "https://www.google.com", method: "POST" as "POST"}
+// const req = { url: "https://www.google.com", method: "POST"}
 // Change 2
 // handleRequest(req.url, req.method as "GET" | "POST")
 // // Change 1 means “I intend for req.method to always have the literal type "GET"”, preventing the possible assignment of "GUESS" to that field after. Change 2 means “I know for other reasons that req.method has the value "GET"“.
 
 // // 2. You can use `as const` to convert the entire object to be type literals:
-// const req = { url: "https://www.google.com", method: "GET"} as const;
-// handleRequest(req.url, req.method)
+const req = { url: 'https://www.google.com', method: 'GET' } as const;
+handleRequest(req.url, req.method);
 // The as const suffix acts like const but for the type system, ensuring that all properties are assigned the literal type instead of a more general version like string or number.
 
 // Tuples - A multi-element, ordered, data structure, where the position of each item has special meaning or convention
 
 //          [Year,     Make,     Model]
 // let myCar = [ 2002, "Toyota", "Corolla" ];
+
 // How TypeScript handles inference: let myCar: (string | number)[]
 // Be more explicit when creating a tuple
 let myCar: [number, string, string] = [2002, 'Toyota', 'Corolla'];

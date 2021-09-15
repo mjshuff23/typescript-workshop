@@ -1,9 +1,9 @@
 // For review, interface is perfect for coming up with shapes that an object MUST conform to
-// interface AnimalLike {
-//   eat(food: string): void;
-// }
+interface AnimalLike {
+  eat(food: string): void;
+}
 
-// // When mixing interfaces with classes, you want to use the 'implements' keyword
+// // // When mixing interfaces with classes, you want to use the 'implements' keyword
 // class Dog implements AnimalLike {
 //   bark() {
 //     return 'woof';
@@ -33,6 +33,7 @@
 
 // function sayDogBreed(dog: Dog) {
 //   console.log(dog.getBreed());
+//   console.log(dog.isAlive());
 // }
 
 // const myDoggo: Dog = {
@@ -91,12 +92,12 @@ console.log(feed(myAnimal));
 
 // // You may be asking yourself: where and how is this useful?
 // // Imagine a situation where you want to add a global property to the window object
-// window.document // existing property
-// window.exampleProperty = 42;
+window.document; // existing property
+window.exampleProperty = 42;
 
-// interface Window {
-//   exampleProperty: number,
-// }
+interface Window {
+  exampleProperty: number;
+}
 
 // Choosing which to use
 // In most situations, either one will suffice, BUT:
@@ -112,6 +113,6 @@ console.log(feed(myAnimal));
 //   - As of TypeScript 3.7, this is much easier now, and works with either type aliases or interfaces
 type NestedNumbers = number | NestedNumbers[];
 
-const val: NestedNumbers = [3, 4, [5, 6, [7], 59], 221];
+const val: NestedNumbers = [3, 4, [5, 6, [7, [10, 20]], 59], 221];
 val.push(12);
 console.log(val);

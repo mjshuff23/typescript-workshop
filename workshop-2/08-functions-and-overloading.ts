@@ -51,7 +51,7 @@ interface DateConstructor {
 
 let myDateConstructor: DateConstructor = Date;
 
-const d = new myDateConstructor();
+const d = new myDateConstructor(1235321);
 
 /* Function Overloads
 
@@ -186,12 +186,12 @@ async function loadData() {
 // If we use the same example, but define a return type explicitly, the error message is surfaced at the declaration site
 async function getDataTwo(url: string): Promise<{ properties: string[] }> {
   const resp = await fetch(url);
-  if (resp.ok) {
-    const data = (await resp.json()) as {
-      properties: string[];
-    };
-    return data;
-  }
+  // if (resp.ok) {
+  const data = (await resp.json()) as {
+    properties: string[];
+  };
+  return data;
+  // }
 }
 
 function loadDataTwo() {

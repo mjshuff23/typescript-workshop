@@ -79,12 +79,14 @@ function makeWeek() {
     // <- return type
     const start = new Date();
     const end = new Date(start.valueOf() + 20000);
+    console.log(start);
     return { ...start, end }; // kind of Object.assign.
     // return start;
     // return end;
 }
 // Here we get everything from our start Date with the addition of an end Date
 const thisWeek = makeWeek();
+console.log(thisWeek);
 // thisWeek.toISOString();
 thisWeek.end.toISOString();
 const newYearsEve = {
