@@ -8,7 +8,7 @@ interface TwoNumberCalculation {
 type TwoNumberCalc = (x: number, y: number) => number;
 
 const add: TwoNumberCalculation = (a, b) => a + b;
-const substract: TwoNumberCalc = (x, y) => x - y;
+const subtract: TwoNumberCalc = (x, y) => x - y;
 
 // Let’s pause for a minute to note:
 //   - The return type for an interface is :number, and for the type alias it’s => number

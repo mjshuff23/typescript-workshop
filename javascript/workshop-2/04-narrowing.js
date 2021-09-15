@@ -31,6 +31,8 @@ console.log(maybeGetUserInfo('success'));
 // console.log(maybeGetUserInfo('error'));
 console.log(maybeGetUserInfo());
 class Person {
+    name;
+    age;
     constructor(name, age) {
         this.name = name;
         this.age = age;

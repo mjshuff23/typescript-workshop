@@ -14,6 +14,10 @@ console.log(myUser);
 // };
 // Since JavaScript supports classes and object-oriented programming, so does TypeScript. You can use an interface declaration with classes:
 class UserAccount {
+    // Notice the user of semicolons rather than commas
+    name;
+    age;
+    id;
     constructor(name, age, id) {
         this.name = name;
         this.age = age;

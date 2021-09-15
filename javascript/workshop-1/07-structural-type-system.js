@@ -19,6 +19,8 @@ logPoint(rect);
 // logPoint(color);
 // There is no difference between how classes and objects conform to shapes:
 class VirtualPoint {
+    x;
+    y;
     constructor(x, y) {
         this.x = x;
         this.y = y;
