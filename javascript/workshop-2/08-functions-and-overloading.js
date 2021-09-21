@@ -29,15 +29,60 @@ const values = [];
 // invokeInFourSeconds(() => values.push(4));
 invokeInFiveSeconds(() => values.push(5));
 let myDateConstructor = Date;
-const d = new myDateConstructor(1235321);
-// Function body
-function handleMainEvent(elem, handler) {
-    //...
-}
-const myFrame = document.getElementsByTagName('iframe')[0];
-const myForm = document.getElementsByTagName('form')[0];
-handleMainEvent(myFrame, (val) => { });
-handleMainEvent(myForm, (val) => { });
+const d = new myDateConstructor(3241212);
+/* Function Overloads
+
+  - Imagine the following situation:
+    <iframe src="https://example.com" />
+    <!-- // -->
+    <form>
+      <input type="text" name="name" />
+      <input type="text" name="email" />
+      <input type="password" name="password" />
+      <input type="submit" value="Login" />
+    </form>
+
+  - What if we had to create a function that allowed us to register a “main event listener”?
+    - If we are passed a form element, we should allow registration of a “submit callback”
+    - If we are passed an iframe element, we should allow registration of a ”postMessage callback”
+    - Let’s give it a shot:
+*/
+// type FormSubmitHandler = (data: FormData) => void;
+// type MessageHandler = (event: MessageEvent) => void;
+// function handleMainEvent(
+//   ele: HTMLFormElement | HTMLIFrameElement,
+//   handler: FormSubmitHandler | MessageHandler
+// ) {}
+// const myFrame = document.getElementsByTagName('iframe')[0]
+// handleMainEvent(myFrame, (val) => {})
+/*
+  This is not good — we are allowing too many possibilities here, including things we don’t aim to support
+   (e.g., using a HTMLIFrameElement with FormSubmitHandler, which doesn’t make much sense).
+
+  We can solve this using function overloads, where we define multiple function heads
+   that serve as entry points to a single implementation:
+*/
+// Head 1 of function
+// function handleMainEvent(
+//   elem: HTMLFormElement,
+//   handler: FormSubmitHandler
+// ): void;
+// // Head 2 of function
+// function handleMainEvent(
+//   elem: HTMLIFrameElement,
+//   handler: MessageHandler
+// ): void;
+// // Function body
+// function handleMainEvent(
+//   elem: HTMLFormElement | HTMLIFrameElement,
+//   handler: FormSubmitHandler | MessageHandler
+// ) {
+//   //...
+// }
+// const myFrame = document.getElementsByTagName('iframe')[0];
+// const myForm = document.getElementsByTagName('form')[0];
+// handleMainEvent(myFrame, (val) => {});
+// handleMainEvent(myForm, (val) => {});
 // handleMainEvent()
 // ^^ Hover for Tooltip ^^
 /* This looks like three function declarations, but it’s really two “heads” that define an argument list

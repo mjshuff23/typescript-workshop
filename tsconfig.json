@@ -76,6 +76,7 @@
     "./workshop-2/05-interfaces-implement.ts",
     "./workshop-2/06-structural-vs-nominal-types.ts",
     "./workshop-2/07-json-types-exercise.ts",
-    "./workshop-2/08-functions-and-overloading.ts"
+    "./workshop-2/08-functions-and-overloading.ts",
+    "./workshop-3/01-functions-and-overloading-continued.ts"
   ]
 }
