@@ -66,7 +66,6 @@
     "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
   },
   "include": [
-    "./"
   ],
   "files": [
     "./workshop-2/01-everyday-types-01.ts",
@@ -78,5 +77,10 @@
     "./workshop-2/07-json-types-exercise.ts",
     "./workshop-2/08-functions-and-overloading.ts",
     "./workshop-3/01-functions-and-overloading-continued.ts"
+  ],
+  "exclude": [
+    "./javascript",
+    "./workshop-1",
+    "./workshop-2"
   ]
 }
