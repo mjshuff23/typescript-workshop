@@ -68,19 +68,20 @@
   "include": [
   ],
   "files": [
-    "./workshop-2/01-everyday-types-01.ts",
-    "./workshop-2/02-everyday-types-02.ts",
-    "./workshop-2/03-everyday-types-03.ts",
-    "./workshop-2/04-narrowing.ts",
-    "./workshop-2/05-interfaces-implement.ts",
-    "./workshop-2/06-structural-vs-nominal-types.ts",
-    "./workshop-2/07-json-types-exercise.ts",
-    "./workshop-2/08-functions-and-overloading.ts",
-    "./workshop-3/01-functions-and-overloading-continued.ts"
+    // "./workshop-2/01-everyday-types-01.ts",
+    // "./workshop-2/02-everyday-types-02.ts",
+    // "./workshop-2/03-everyday-types-03.ts",
+    // "./workshop-2/04-narrowing.ts",
+    // "./workshop-2/05-interfaces-implement.ts",
+    // "./workshop-2/06-structural-vs-nominal-types.ts",
+    // "./workshop-2/07-json-types-exercise.ts",
+    // "./workshop-2/08-functions-and-overloading.ts",
+    "./workshop-3/01-functions-and-overloading-continued.ts",
+    "./workshop-3/02-classes-and-access-modifier-keywords.ts"
   ],
   "exclude": [
     "./javascript",
-    "./workshop-1",
-    "./workshop-2"
+    "./workshop-1/*",
+    "./workshop-2/*"
   ]
 }
