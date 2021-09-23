@@ -91,24 +91,24 @@
 // As of TypeScript 3.8, TypeScript supports use of ECMAScript private class fields.
 // If you have trouble getting this to work in your codebase, make sure to double-check
 //  your Babel settings
-class Car {
-  public make: string;
-  public model: string;
-  #year: number;
+// class Car {
+//   public make: string;
+//   public model: string;
+//   #year: number;
 
-  constructor(make: string, model: string, year: number) {
-    this.make = make;
-    this.model = model;
-    this.#year = year;
-  }
+//   constructor(make: string, model: string, year: number) {
+//     this.make = make;
+//     this.model = model;
+//     this.#year = year;
+//   }
 
-  sayInfo = () => {
-    console.log(`I am a ${this.#year} ${this.make} ${this.model}`);
-  };
-}
+//   sayInfo = () => {
+//     console.log(`I am a ${this.#year} ${this.make} ${this.model}`);
+//   };
+// }
 
-const c = new Car('Honda', 'Accord', 1997);
-c.sayInfo();
+// const c = new Car('Honda', 'Accord', 1997);
+// c.sayInfo();
 // c.#year; // Property '#year' is not accessible outside class 'Car' because it has a private identifier.
 
 ///////////////////////////////// readonly Keyword /////////////////////////////////
