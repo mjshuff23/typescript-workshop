@@ -109,7 +109,7 @@ class Boat {
 }
 type Vehicle = Truck | Car | Boat;
 
-let myVehicle: Vehicle = obtainRandomVehicle();
+// let myVehicle: Vehicle = obtainRandomVehicle();
 
 // // The exhaustive conditional
 // if (myVehicle instanceof Truck) {
@@ -129,14 +129,14 @@ class UnreachableError extends Error {
 }
 
 // The exhaustive conditional
-if (myVehicle instanceof Truck) {
-  myVehicle.tow(); // Truck
-} else if (myVehicle instanceof Car) {
-  myVehicle.drive(); // Car
-} else {
-  // NEITHER!
-  throw new UnreachableError(
-    myVehicle, // Argument of type 'Boat' is not assignable to parameter of type 'never'.
-    `Unexpected vehicle type: ${myVehicle}`
-  );
-}
+// if (myVehicle instanceof Truck) {
+//   myVehicle.tow(); // Truck
+// } else if (myVehicle instanceof Car) {
+//   myVehicle.drive(); // Car
+// } else {
+//   // NEITHER!
+//   throw new UnreachableError(
+//     myVehicle, // Argument of type 'Boat' is not assignable to parameter of type 'never'.
+//     `Unexpected vehicle type: ${myVehicle}`
+//   );
+// }
