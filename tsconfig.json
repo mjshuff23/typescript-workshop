@@ -78,7 +78,9 @@
     // "./workshop-2/08-functions-and-overloading.ts",
     "./workshop-3/01-functions-and-overloading-continued.ts",
     "./workshop-3/02-classes-and-access-modifier-keywords.ts",
-    "./workshop-3/03-top-and-bottom-types.ts"
+    "./workshop-3/03-top-and-bottom-types.ts",
+    "./workshop-3/04-type-guards-and-narrowing.ts",
+    "./workshop-3/05-nullish-values.ts"
   ],
   "exclude": [
     "./javascript",
