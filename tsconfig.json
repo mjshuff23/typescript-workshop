@@ -82,7 +82,8 @@
     "./workshop-3/04-type-guards-and-narrowing.ts",
     "./workshop-3/05-nullish-values.ts",
     "./workshop-3/06-generics.ts",
-    "./workshop-3/07-dict-map-filter-reduce.ts"
+    "./workshop-3/07-dict-map-filter-reduce.ts",
+    "./workshop-3/08-generics-scopes-constraints.ts"
   ],
   "exclude": [
     "./javascript",
