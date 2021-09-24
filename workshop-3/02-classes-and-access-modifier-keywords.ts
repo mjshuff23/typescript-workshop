@@ -150,7 +150,7 @@
 // }
 
 // const myCar = new Car("Honda", "Accord", 1999);
-// myCar.
+// myCar
 
 // The first argument passed to the constructor should be a string, and should be available within the scope
 //  of the constructor as make. This also creates a public class field on Car called make and pass it the value

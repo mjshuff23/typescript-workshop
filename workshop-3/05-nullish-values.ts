@@ -43,7 +43,7 @@ cart.fruits!.push({ name: 'kumquat', qty: 1 });
 //  it was initialized
 
 class AsyncStuff {
-  setupPromise: Promise<any>; // ignore 'any' for now
+  setupPromise: Promise<any>;
   isSetup: boolean;
 
   constructor() {
