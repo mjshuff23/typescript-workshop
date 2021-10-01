@@ -1,4 +1,4 @@
-import { User } from "./02-interfaces";
+import { User } from './02-interfaces';
 // Never
 
 // Because TypeScript supports code flow analysis, the language
@@ -6,8 +6,8 @@ import { User } from "./02-interfaces";
 // happen. For example, this function cannot return:
 
 const neverReturns = () => {
-	// If it throws on the first line
-	throw new Error('Always throws, never returns');
+  // If it throws on the first line
+  throw new Error('Always throws, never returns');
 };
 
 // If you hover on the type, you see it is a () => never
@@ -21,18 +21,18 @@ const neverReturns = () => {
 // API consumers that might not be using types:
 
 const validateUser = (user: User) => {
-	if (user) {
-		return user.name !== "NaN";
-	}
+  if (user) {
+    return user.name !== 'NaN';
+  }
 
-	// According to the type system, this code path can never
-	// happen, which matches the return type of neverReturns.
-	neverReturns();
+  // According to the type system, this code path can never
+  // happen, which matches the return type of neverReturns.
+  neverReturns();
 };
 
 const newUser: User = {
-	name: "Johnathan",
-	age: 55
+  name: 'Johnathan',
+  age: 55,
 };
 
 console.log(validateUser(newUser));
@@ -53,30 +53,30 @@ console.log(validateUser(newUser));
 // a new option to the enum (maybe Tulip?)
 
 enum Flower {
-	Rose,
-	Rhododendron,
-	Violet,
-	Daisy,
-	Tulip
+  Rose,
+  Rhododendron,
+  Violet,
+  Daisy,
+  Tulip,
 }
 
 const flowerLatinName = (flower: Flower) => {
-	switch (flower) {
-		case Flower.Rose:
-			return "Rosa rubiginosa";
-		case Flower.Rhododendron:
-			return "Rhododendron ferrugineum";
-		case Flower.Violet:
-			return "Viola reichenbachiana";
-		case Flower.Daisy:
-			return "Bellis perennis";
-		case Flower.Tulip:
-			return 'blah';
+  switch (flower) {
+    case Flower.Rose:
+      return 'Rosa rubiginosa';
+    case Flower.Rhododendron:
+      return 'Rhododendron ferrugineum';
+    case Flower.Violet:
+      return 'Viola reichenbachiana';
+    case Flower.Daisy:
+      return 'Bellis perennis';
+    case Flower.Tulip:
+      return 'blah';
 
-		default:
-			const _exhaustiveCheck: never = flower;
-			return _exhaustiveCheck;
-	}
+    default:
+      const _exhaustiveCheck: never = flower;
+      return _exhaustiveCheck;
+  }
 };
 
 // Never in Unions

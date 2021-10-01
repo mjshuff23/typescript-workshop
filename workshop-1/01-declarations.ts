@@ -1,5 +1,7 @@
 /*
-TypeScript knows the JavaScript language and will generate types for you in many cases. For example in creating a variable and assigning it to a particular value, TypeScript will use the value as its type.
+TypeScript knows the JavaScript language and will generate types for you in many cases.
+ For example in creating a variable and assigning it to a particular value, TypeScript
+ will use the value as its type.
 */
 
 // Hover over helloWorld, and notice how TypeScript has inferred it's type based on the data we supply the variable with.
@@ -13,7 +15,7 @@ let startTime = new Date();
 // let endTime: Date;
 
 // However, you can be very explicit with types if you wish, although it is often unnecessary:
-// Syntax: `let/const/var variablename: type [= value]`
+// Syntax: `let/const/var <<variable name>>: <<type>> [= value]` (Square brackets are optional, meaning we don't have to give it a value immediately unless using const)
 let myFirstName: string;
 let myLastName: string = 'Shuff';
 let myAge: number = 34;
