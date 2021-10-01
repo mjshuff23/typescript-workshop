@@ -31,3 +31,9 @@ TypeScript offers a strict-type check as a superset of the JavaScript language. 
     - Turning on the `noImplicitAny` flag will issue an error on any variables whose type is implicitly inferred as `any`.
   - **strictNullChecks**
     - By default, values like `null` and `undefined` are assignable to any other type. This can make writing some code easier, but forgetting to handle `null` and `undefined` is the cause of countless bugs in the world - some consider it a billion dollar mistake! The `strictNullChecks` flag makes handling `null` and `undefined` more explicit, and spares us from worrying about whether we forgot to handle `null` and `undefined`.
+
+## ts-node - Code Runner for TypeScript
+
+- You can run TypeScript code without compiling with the TypeScript compiler by installing `ts-node` either globally or for your project
+- `npm install ts-node`
+- For Windows, `ctrl + alt + n` will run the TypeScript code for you

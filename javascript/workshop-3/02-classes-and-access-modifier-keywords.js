@@ -77,6 +77,15 @@
 /////////////////////////////// JS Private #fields ///////////////////////////////
 // As of TypeScript 3.8, TypeScript supports use of ECMAScript private class fields.
 // If you have trouble getting this to work in your codebase, make sure to double-check
+class Car {
+  #year;
+  constructor(year) {
+    this._year = year;
+  }
+}
+
+let myAccord = new Car();
+console.log(myAccord.#year);
 //  your Babel settings
 // class Car {
 //   public make: string;
@@ -144,15 +153,14 @@
 // }
 // const c = new Car('honda');
 ////////////////////////////////// JavaScript //////////////////////////////////
-'use strict';
-class Base {
-}
+('use strict');
+class Base {}
 class Car extends Base {
-    constructor(make) {
-        super(); // MUST be called first
-        this.make = make;
-        this.foo = console.log('class field initializer');
-        console.log('custom constructor stuff');
-    }
+  constructor(make) {
+    super(); // MUST be called first
+    this.make = make;
+    this.foo = console.log('class field initializer');
+    console.log('custom constructor stuff');
+  }
 }
 const c = new Car('honda');

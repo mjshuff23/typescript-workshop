@@ -11,13 +11,75 @@ const fruits = {
   cherry: { color: 'red', mass: 5 },
 };
 
-interface Dict<T> {
-  [k: string]: T;
+interface Dict<Type> {
+  [k: string]: Type;
 }
 
 // Array.prototype.map, but for Dict
-function mapDict(...args: any[]): any {}
+function mapDict<Type, NewType>(
+  inputDict: Dict<Type>,
+  mapFunction: (original: Type) => NewType
+): Dict<NewType> {
+  const newDict: Dict<NewType> = {};
+
+  for (let key of Object.keys(inputDict)) {
+    const currentValue = inputDict[key];
+    newDict[key] = mapFunction(currentValue);
+  }
+
+  return newDict;
+}
+
+const fruitsWithKgMass = mapDict(fruits, (fruit) => ({
+  ...fruit,
+  kg: 0.001 * fruit.mass,
+}));
+console.log(fruitsWithKgMass);
+
 // Array.prototype.filter, but for Dict
-function filterDict(...args: any[]): any {}
+// Filter for Dict
+// T - our input
+function filterDict<T>(
+  inputDict: Dict<T>,
+  filterFunction: (value: T) => boolean
+): Dict<T> {
+  const outDict: Dict<T> = {};
+
+  for (let k of Object.keys(inputDict)) {
+    const thisVal = inputDict[k];
+
+    if (filterFunction(thisVal)) outDict[k] = thisVal;
+  }
+
+  return outDict;
+}
+
+const redFruit = filterDict(fruits, (fruit) => fruit.color === 'red');
+console.log(redFruit);
+
 // Array.prototype.reduce, but for Dict
-function reduceDict(...args: any[]): any {}
+// Reduce for Dict
+// T - input
+// V - value
+function reduceDict<T, V>(
+  inputDict: Dict<T>,
+  reducerFunction: (currentVal: V, dictItem: T) => V,
+  initialValue: V
+): V {
+  let value = initialValue;
+
+  for (let k of Object.keys(inputDict)) {
+    const thisVal = inputDict[k];
+    value = reducerFunction(value, thisVal);
+  }
+
+  return value;
+}
+
+const oneOfEachFruitMass = reduceDict(
+  fruits,
+  (currentMass, fruit) => currentMass + fruit.mass,
+  1000
+);
+
+console.log(oneOfEachFruitMass);

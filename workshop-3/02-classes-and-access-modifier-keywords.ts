@@ -161,10 +161,10 @@
 // class Base {}
 
 // class Car extends Base {
-//   foo = console.log('class field initializer');
-//   constructor(public make: string) {
-//     super();
-//     console.log('custom constructor stuff');
+//   foo = console.log('class field initializer'); // 3
+//   constructor(public make: string) { // 2
+//     super(); // 1
+//     console.log('custom constructor stuff'); // 4
 //   }
 // }
 

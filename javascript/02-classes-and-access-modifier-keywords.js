@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 ////////////////////////////////// JavaScript //////////////////////////////////
 // class Car {
 //   constructor(make, model, year) {
@@ -79,21 +79,21 @@
 // As of TypeScript 3.8, TypeScript supports use of ECMAScript private class fields.
 // If you have trouble getting this to work in your codebase, make sure to double-check
 //  your Babel settings
-class Car {
-  make;
-  model;
-  #year;
-  constructor(make, model, year) {
-    this.make = make;
-    this.model = model;
-    this.#year = year;
-  }
-  sayInfo = () => {
-    console.log(`I am a ${this.#year} ${this.make} ${this.model}`);
-  };
-}
-const c = new Car('Honda', 'Accord', 1997);
-c.sayInfo();
+// class Car {
+//   public make: string;
+//   public model: string;
+//   #year: number;
+//   constructor(make: string, model: string, year: number) {
+//     this.make = make;
+//     this.model = model;
+//     this.#year = year;
+//   }
+//   sayInfo = () => {
+//     console.log(`I am a ${this.#year} ${this.make} ${this.model}`);
+//   };
+// }
+// const c = new Car('Honda', 'Accord', 1997);
+// c.sayInfo();
 // c.#year; // Property '#year' is not accessible outside class 'Car' because it has a private identifier.
 ///////////////////////////////// readonly Keyword /////////////////////////////////
 // While not strictly an access modifier keyword (because it has nothing to do with visibility),
@@ -129,7 +129,7 @@ c.sayInfo();
 //   constructor(public make: string, public model: string, public year: number) {}
 // }
 // const myCar = new Car("Honda", "Accord", 1999);
-// myCar.
+// myCar
 // The first argument passed to the constructor should be a string, and should be available within the scope
 //  of the constructor as make. This also creates a public class field on Car called make and pass it the value
 //  that was given to the constructor
@@ -137,10 +137,10 @@ c.sayInfo();
 ////////////////////////////////// TypeScript //////////////////////////////////
 // class Base {}
 // class Car extends Base {
-//   foo = console.log('class field initializer');
-//   constructor(public make: string) {
-//     super();
-//     console.log('custom constructor stuff');
+//   foo = console.log('class field initializer'); // 3
+//   constructor(public make: string) { // 2
+//     super(); // 1
+//     console.log('custom constructor stuff'); // 4
 //   }
 // }
 // const c = new Car('honda');
