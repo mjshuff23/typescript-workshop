@@ -98,7 +98,7 @@ let myDynamicArray: Array<any> = [
 let anotherDynamicArray: any[] = ['Test', 12, true];
 
 // Object declaration
-let myObjectTwo: Object = {
+let myObject: Object = {
   name: 'Yo',
   age: 33,
   isAdult: true,
