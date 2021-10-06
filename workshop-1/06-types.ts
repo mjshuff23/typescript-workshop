@@ -12,6 +12,16 @@ type LockStates = 'locked' | 'unlocked';
 type PositiveOddNumbersUnderTen = 1 | 3 | 5 | 7 | 9;
 type myCrazyType = 'Hi' | false | 10;
 
+type StringOrNumber = string | number;
+
+function doStuff(myParameter: StringOrNumber) {
+  if (typeof myParameter === 'string') {
+    myParameter.toUpperCase();
+  } else {
+    myParameter;
+  }
+}
+
 // Unions provide a way to handle different types too. For example, you may have a function that takes an array or a string:
 function getLength(obj: string | string[]) {
   return `${typeof obj === 'string' ? 'string' : 'array'}: ${obj.length}`;

@@ -1,5 +1,5 @@
 declare const _default: {
-    myObject: any;
+    myObject: Object;
     myAge: number;
 };
 export = _default;

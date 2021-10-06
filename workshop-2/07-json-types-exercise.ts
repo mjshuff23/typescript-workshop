@@ -15,11 +15,9 @@
 
 // Starting Point
 // All of our primitive types
-type Primitive = number | boolean | string | null;
-
-type JSONObject = { [k: string]: JSONValue };
-type JSONArray = JSONValue[];
-type JSONValue = Primitive | JSONArray | JSONObject;
+type JSONObject = any;
+type JSONArray = any;
+type JSONValue = any;
 
 ///// DO NOT EDIT ANY CODE BELOW THIS LINE /////
 function isJSON(arg: JSONValue) {}
@@ -36,8 +34,13 @@ isJSON(null);
 isJSON({ a: { b: [2, 3, 'foo'] } });
 
 // NEGATIVE test cases (must fail)
-// isJSON(() => '');
-// isJSON(class {});
-// isJSON(undefined);
-// isJSON(new BigInt(143));
-// isJSON(isJSON);
+// @ts-expect-error
+isJSON(() => '');
+// @ts-expect-error
+isJSON(class {});
+// @ts-expect-error
+isJSON(undefined);
+// @ts-expect-error
+isJSON(new BigInt(143));
+// @ts-expect-error
+isJSON(isJSON);

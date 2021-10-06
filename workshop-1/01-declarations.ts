@@ -11,8 +11,8 @@ let helloWorld = 'Hello, world!';
 
 // Sometimes we don't have initial values for our variables, so we need to use Type Annotations:
 let startTime = new Date();
-// let endTime;   // Hover over endTime
-// let endTime: Date;
+// let endTime; // Hover over endTime
+let endTime: Date;
 
 // However, you can be very explicit with types if you wish, although it is often unnecessary:
 // Syntax: `let/const/var <<variable name>>: <<type>> [= value]` (Square brackets are optional, meaning we don't have to give it a value immediately unless using const)
@@ -31,7 +31,10 @@ let mySecondArrayOfNums: number[] = [5, 10, 15, 20];
 let myArrayOfStrings: Array<string> = ['John', 'Doe'];
 // Can also be done:
 let anotherArrayOfStrings: string[] = ['Mike', 'Shuff'];
+let myAnyArray: Array<any> = [12, true, null, 'test'];
+let mySecondAnyArray: any[] = [true, null, 123131];
 
+// Is a shape that want our object to conform to
 interface MyUserObject {
   name: string;
   age: number;
@@ -41,6 +44,10 @@ let myUser: MyUserObject = {
   name: 'Mike',
   age: 33,
 };
+
+interface Window {
+  myNumberProperty: (a: number, b: number) => number;
+}
 
 // Arrays
 let myUsers: MyUserObject[] = [myUser, myUser];
@@ -60,7 +67,7 @@ let myNulls: null[] = [null, null];
 let myUndefineds: undefined[] = [undefined, undefined, undefined];
 let myArrayOfArrays: number[][] = [[1, 4, 10], [10, 10, 30], [30]];
 let myAnyArray: any[] = ['test', 12, true, 'me', null, 'out'];
-let myDateArray: Date[] = [new Date()];
+let myDateArray: Date[] = [new Date(), new Date()];
 
 // Arrays (alternative)
 let myAltUsers: Array<MyUserObject> = [myUser, myUser];
@@ -116,6 +123,12 @@ console.log(myObject);
 // `never` - It's not possible that this type can happen
 // `void` - A function which returns `undefined` or has no return value
 
+let myArray: any[] = [];
+
+function populateArray(): void {
+  myArray.push(12);
+}
+console.log(populateArray());
 // You’ll see that there are two syntaxes for building types: Interfaces and Types. You should prefer `interface`. Use `type` when you need specific features.
 
 // Exporting

@@ -2,8 +2,8 @@
 export interface User {
   name: string;
   age: number;
-  // We can also have Optional Properties:
-  id?: number;
+  // We can also have Optional Properties: | = or
+  id?: number | string;
 }
 
 // You can then declare that a JavaScript object conforms to the shape of your new interface by using syntax like : TypeName after a variable declaration:
@@ -33,6 +33,14 @@ class UserAccount {
     this.id = id;
   }
 }
+
+// export interface User {
+//   name: string;
+//   age: number;
+//   // We can also have Optional Properties: | = or
+//   id?: number | string;
+// }
+
 const user: User = new UserAccount('Michael', 33);
 console.log(user);
 
@@ -43,9 +51,11 @@ function getAdminUser(): User {
 }
 console.log(getAdminUser());
 
-function add(a: number, b: number): number {
+function add(a: string, b: number) {
   return a + b;
 }
+
+add('12', 12);
 
 function sayHello(): void {
   console.log('Hello');
@@ -55,4 +65,4 @@ function sayHello(): void {
 function deleteUser(user: User) {
   console.log(user, 'deleted');
 }
-deleteUser(user);
+deleteUser({ name: 'test', age: 12 });

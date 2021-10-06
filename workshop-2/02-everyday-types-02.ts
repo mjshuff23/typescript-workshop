@@ -7,7 +7,7 @@
 
 // You can use semi-colons (;) or commas (,) to separate properties on an type
 // It is convention to use TitleCase for alias names and interface names
-type PointType = {
+type Point = {
   x: number;
   y: number;
 };
@@ -17,7 +17,7 @@ type PointType = {
 //   y: number;
 // }
 
-let myPoint: PointType = {
+let myPoint: Point = {
   x: 150,
   y: 200,
 };
@@ -91,9 +91,13 @@ interface PointInterface {
 //   size: { height: number; width: number };
 // }
 
-// interface Window {
-//   myProperty: string,
-// }
+interface Window {
+  myProperty: string;
+}
+
+interface String {
+  myRandomProperty: number;
+}
 
 // interface HTMLCanvasElement {
 //   myNum: number,

@@ -87,13 +87,13 @@ if (secondOutcome[0] === 'error') {
 
 // For example, what if we had a Promise that had extra startTime and endTime properties to it?
 // We can merge these types together with an intersection return
-function makeWeek(): Date & { end: Date } {
+function makeWeek(): { start: Date } & { end: Date } {
   // <- return type
 
   const start = new Date();
   const end = new Date(start.valueOf() + 20000);
-  console.log(start);
-  return { ...start, end }; // kind of Object.assign.
+  console.dir(typeof start);
+  return { start, end }; // kind of Object.assign.
   // return start;
   // return end;
 }
@@ -106,11 +106,12 @@ thisWeek.end.toISOString();
 
 // Union Types are FAR more common than Intersection Types, but you will see them
 
-type SpecialDate = Date & { getReason(): string };
+type SpecialDate = { date: Date } & { getReason(): string };
 
 const newYearsEve: SpecialDate = {
-  ...new Date(),
+  date: new Date(),
   getReason: () => 'Last day of the year!',
 };
 
 console.log(newYearsEve.getReason());
+console.dir(newYearsEve);

@@ -12,10 +12,9 @@ const phones = {
 };
 
 // We can store phone numbers under a `key` (home, work, mobile, etc...) where each number has three properties that are strings
-
 // We can describe this value using an `index signature`
 const phonesIndex: {
-  [k: string]: // home, work, mobile, banana, potato
+  [key: string]: // home, work, mobile, banana, potato
   {
     country: string;
     area: string;
@@ -25,3 +24,4 @@ const phonesIndex: {
 
 console.log('test');
 console.log(phonesIndex.area.number);
+phonesIndex.whatever.number;

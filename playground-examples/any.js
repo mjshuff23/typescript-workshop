@@ -1,4 +1,3 @@
-"use strict";
 // Any is the TypeScript escape clause. You can use any to
 // either declare a section of your code to be dynamic and
 // JavaScript like, or to work around limitations in the

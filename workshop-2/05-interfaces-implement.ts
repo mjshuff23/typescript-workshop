@@ -46,7 +46,7 @@ interface AnimalLike {
 // console.log(myDoggo.getFurOrHairColor());
 // console.log(myDoggo.getBreed());
 
-// // Althought JS and TS do not support true multiple inheritance, we can emulate it by subscribing a class to multiple interfaces and extends
+// // Although JS and TS do not support true multiple inheritance, we can emulate it by subscribing a class to multiple interfaces and extends
 // class LivingOrganism {
 //   isAlive = () => {
 //     return true;

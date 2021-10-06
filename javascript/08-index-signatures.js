@@ -16,3 +16,4 @@ const phones = {
 const phonesIndex = {};
 console.log('test');
 console.log(phonesIndex.area.number);
+phonesIndex.whatever.number;

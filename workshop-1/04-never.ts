@@ -58,6 +58,7 @@ enum Flower {
   Violet,
   Daisy,
   Tulip,
+  Lavender,
 }
 
 const flowerLatinName = (flower: Flower) => {
@@ -72,6 +73,8 @@ const flowerLatinName = (flower: Flower) => {
       return 'Bellis perennis';
     case Flower.Tulip:
       return 'blah';
+    case Flower.Lavender:
+      return 'hi';
 
     default:
       const _exhaustiveCheck: never = flower;

@@ -13,16 +13,17 @@ const jsonParser = (jsonString: string) => JSON.parse(jsonString);
 
 const myAccount = jsonParser(`{ "name": "Dorothea" }`);
 
-console.log(myAccount.name);  // Dorothea
+console.log(myAccount.name); // Dorothea
 console.log(myAccount.email); // undefined
-console.log(myAccount);       // { name: 'Dorothea' }
+console.log(myAccount); // { name: 'Dorothea' }
 
 // If you hover on jsonParser, you can see that it has the
 // return type of any, so then does myAccount. It's possible
 // to fix this with Generics - but it's also possible to fix
 // this with unknown.
 
-const jsonParserUnknown = (jsonString: string): unknown => JSON.parse(jsonString);
+const jsonParserUnknown = (jsonString: string): unknown =>
+  JSON.parse(jsonString);
 
 // const myOtherAccount = jsonParserUnknown(`{ "name": "Samuel" }`);
 
@@ -32,12 +33,15 @@ const jsonParserUnknown = (jsonString: string): unknown => JSON.parse(jsonString
 // been declared to TypeScript. This can be used to ensure
 // that API consumers think about their typing up-front:
 
-
 type UnknownUser = {
   name: string;
+  age: string;
 };
-const myUserAccount = jsonParserUnknown(`{ "name": "Samuel", "age": "12" }`) as UnknownUser;
+const myUserAccount = jsonParserUnknown(
+  `{ "name": "Samuel", "age": "12" }`
+) as UnknownUser;
 console.log(myUserAccount.name);
+console.log(myUserAccount.age);
 
 // Unknown is a great tool, to understand it more read these:
 // https://mariusschulz.com/blog/the-unknown-type-in-typescript

@@ -68,26 +68,28 @@
   "include": [
   ],
   "files": [
-    // "./workshop-2/01-everyday-types-01.ts",
-    // "./workshop-2/02-everyday-types-02.ts",
-    // "./workshop-2/03-everyday-types-03.ts",
-    // "./workshop-2/04-narrowing.ts",
-    // "./workshop-2/05-interfaces-implement.ts",
-    // "./workshop-2/06-structural-vs-nominal-types.ts",
-    // "./workshop-2/07-json-types-exercise.ts",
-    // "./workshop-2/08-functions-and-overloading.ts",
-    "./workshop-3/01-functions-and-overloading-continued.ts",
-    "./workshop-3/02-classes-and-access-modifier-keywords.ts",
-    "./workshop-3/03-top-and-bottom-types.ts",
-    "./workshop-3/04-type-guards-and-narrowing.ts",
-    "./workshop-3/05-nullish-values.ts",
-    "./workshop-3/06-generics.ts",
-    "./workshop-3/07-dict-map-filter-reduce.ts",
-    "./workshop-3/08-generics-scopes-constraints.ts"
+    // "./workshop-1/01-declarations.ts",
+    // "./workshop-1/08-index-signatures.ts"
+    "./workshop-2/01-everyday-types-01.ts",
+    "./workshop-2/02-everyday-types-02.ts",
+    "./workshop-2/03-everyday-types-03.ts",
+    "./workshop-2/04-narrowing.ts",
+    "./workshop-2/05-interfaces-implement.ts",
+    "./workshop-2/06-structural-vs-nominal-types.ts",
+    "./workshop-2/07-json-types-exercise.ts",
+    "./workshop-2/08-functions-and-overloading.ts",
+    // "./workshop-3/01-functions-and-overloading-continued.ts",
+    // "./workshop-3/02-classes-and-access-modifier-keywords.ts",
+    // "./workshop-3/03-top-and-bottom-types.ts",
+    // "./workshop-3/04-type-guards-and-narrowing.ts",
+    // "./workshop-3/05-nullish-values.ts",
+    // "./workshop-3/06-generics.ts",
+    // "./workshop-3/07-dict-map-filter-reduce.ts",
+    // "./workshop-3/08-generics-scopes-constraints.ts"
   ],
   "exclude": [
-    "./javascript",
-    "./workshop-1/*",
-    "./workshop-2/*"
+    // "./javascript",
+    // "./workshop-1/*",
+    // "./workshop-2/*"
   ]
 }

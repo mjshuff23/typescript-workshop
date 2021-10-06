@@ -1,6 +1,8 @@
 "use strict";
 /*
-TypeScript knows the JavaScript language and will generate types for you in many cases. For example in creating a variable and assigning it to a particular value, TypeScript will use the value as its type.
+TypeScript knows the JavaScript language and will generate types for you in many cases.
+ For example in creating a variable and assigning it to a particular value, TypeScript
+ will use the value as its type.
 */
 // Hover over helloWorld, and notice how TypeScript has inferred it's type based on the data we supply the variable with.
 let helloWorld = 'Hello, world!';
@@ -8,10 +10,10 @@ let helloWorld = 'Hello, world!';
 // helloWorld = 12;
 // Sometimes we don't have initial values for our variables, so we need to use Type Annotations:
 let startTime = new Date();
-// let endTime;   // Hover over endTime
-// let endTime: Date;
+// let endTime; // Hover over endTime
+let endTime;
 // However, you can be very explicit with types if you wish, although it is often unnecessary:
-// Syntax: `let/const/var variablename: type [= value]`
+// Syntax: `let/const/var <<variable name>>: <<type>> [= value]` (Square brackets are optional, meaning we don't have to give it a value immediately unless using const)
 let myFirstName;
 let myLastName = 'Shuff';
 let myAge = 34;
@@ -26,6 +28,8 @@ let mySecondArrayOfNums = [5, 10, 15, 20];
 let myArrayOfStrings = ['John', 'Doe'];
 // Can also be done:
 let anotherArrayOfStrings = ['Mike', 'Shuff'];
+let myAnyArray = [12, true, null, 'test'];
+let mySecondAnyArray = [true, null, 123131];
 let myUser = {
     name: 'Mike',
     age: 33,
@@ -48,7 +52,7 @@ let myNulls = [null, null];
 let myUndefineds = [undefined, undefined, undefined];
 let myArrayOfArrays = [[1, 4, 10], [10, 10, 30], [30]];
 let myAnyArray = ['test', 12, true, 'me', null, 'out'];
-let myDateArray = [new Date()];
+let myDateArray = [new Date(), new Date()];
 // Arrays (alternative)
 let myAltUsers = [myUser, myUser];
 let myAltNums = [1, 5, 10];
@@ -85,7 +89,7 @@ let myDynamicArray = [
 // Can also be done
 let anotherDynamicArray = ['Test', 12, true];
 // Object declaration
-let myObjectTwo = {
+let myObject = {
     name: 'Yo',
     age: 33,
     isAdult: true,
@@ -93,6 +97,16 @@ let myObjectTwo = {
 // // No can do:
 // myObject.name = 12;
 console.log(myObject);
+// There are a few additions types that TypeScript offers:
+// `any` - Allow anything
+// `unknown` - Ensure someone using this type declares what the type is
+// `never` - It's not possible that this type can happen
+// `void` - A function which returns `undefined` or has no return value
+let myArray = [];
+function populateArray() {
+    myArray.push(12);
+}
+console.log(populateArray());
 module.exports = {
     myObject,
     myAge,

@@ -21,7 +21,7 @@ declare const phones: {
     };
 };
 declare const phonesIndex: {
-    [k: string]: {
+    [key: string]: {
         country: string;
         area: string;
         number: string;
